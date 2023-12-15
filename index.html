@@ -12,68 +12,88 @@
 
 
 <div id="main-app">
-  <nav class="d-flex flex-column justify-content-between align-items-center">
-    <div class="menu d-flex flex-column">
-      <img
-        src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg"
-        alt="AC" class="ac-logo">
-    </div>
-    <div class="nav-bar">
-      <img
-        src=https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/frame.svg
-        alt="">
-      <img
-        src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/folder.svg"
-        alt="">
-      <img
-        src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/mail.svg"
-        alt="">
-    </div>
-  </nav>
-  <main id="main-content">
-    <div class="form-panel scrollbar">
-      <div class="container form-container">
-        <form id="a-form">
-          <div class="form-content">
-            <div class="part">
-              <h4>Campaign</h4>
-              <div class="terms-panel scrollbar my-2">
-                <div class="table-header">
-                  <input id="terms-check" type="checkbox">
-                  <h6 class="id">ID</h6>
-                  <h6 class="name">Name</h6>
-                  <h6 class="advertiser">advertiser group</h6>
-                  <h6 class="description">Description</h6>
-                  <h6 class="price">price</h6>
-                  <h6 class="start-time">Start Time</h6>
-                  <h6 class="end-time">End Time</h6>
-                  <h6 class="actions">Actions</h6>
-                </div>
 
-                <div class="terms-content">
-                  <div class="line-1">
-                    <input id="terms-check" type="checkbox">
-                    <h6 class="id">1</h6>
-                    <h6 class="name">Christmas 2020</h6>
-                    <h6 class="advertiser">Food Market Krab</h6>
-                    <h6 class="description">Holiday Night During Christmas</h6>
-                    <h6 class="price">$2000</h6>
-                    <h6 class="start-time">2020/12/24 19:30</h6>
-                    <h6 class="end-time">2021/01/02 23:00</h6>
-                    <h6 class="actions"><img
-                        src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/menu.svg"
-                        alt=""></h6>
-
-                  </div>
-
-                </div>
-              </div>
-
-        </form>
+  <nav class="sidebar flex-column justify-content-between">
+    <div class="sidebar__menu">
+      <div class="sidebar__menu__logo d-flex flex-column">
+        <img
+          src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg"
+          alt="AC" class="ac-logo">
+      </div>
+      <div class="sidebar__menu__link">
+        <img
+          src=https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/frame.svg
+          alt="" class="frame">
+        <img
+          src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/folder.svg"
+          alt="" class="folder">
+        <img
+          src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/mail.svg"
+          alt="" class="mail">
       </div>
     </div>
+  </nav>
+
+  <main id="content">
+    <div class="content__container">
+      <div class="content__container__title">
+        <h1 class="title">Campaign</h1>
+      </div>
+
+      <div class="content__container__main">
+
+        <div class="content__container__main__header d-flex">
+          <div class="checkbox text-center">
+            <input id="terms-check" type="checkbox">
+          </div>
+
+          <h6 class="id text-center">ID</h6>
+          <h6 class="name text-center">Name</h6>
+          <div class="content__container__main__header__ad-g">
+            <h6 class="advertiser text-center">Advertiser</h6>
+            <h6 class="group text-center">Group</h6>
+          </div>
+          <h6 class="description text-center">Description</h6>
+          <h6 class="price text-center">price</h6>
+          <img
+            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/sort.svg"
+            alt="" class="price-sort">
+          <h6 class="start-time text-center">Start Time</h6>
+          <img
+            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/sort.svg"
+            alt="" class="start-time-sort">
+          <h6 class="end-time text-center">End Time</h6>
+          <img
+            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/sort.svg"
+            alt="" class="end-time-sort">
+          <h6 class="actions text-center">Actions</h6>
+
+        </div>
+
+        <div class="content__container__detail scrollbar">
+
+          <div class="content__container__detail__line-1 d-flex">
+            <input id="terms-check" type="checkbox">
+            <h6 class="id">1</h6>
+            <h6 class="name">Christmas 2020</h6>
+            <h6 class="advertiser">Food Market Krab</h6>
+            <h6 class="description">Holiday Night During Christmas</h6>
+            <h6 class="price">$2000</h6>
+            <h6 class="start-time">2020/12/24 19:30</h6>
+            <h6 class="end-time">2021/01/02 23:00</h6>
+            <h6 class="actions"><img
+                src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/menu.svg"
+                alt=""></h6>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </main>
 </div>
-</main>
-</div>
+
 
 </html>
