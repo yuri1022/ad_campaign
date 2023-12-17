@@ -192,7 +192,7 @@ body {
 }
 
 .sidebar {
-  width: 3rem;
+  width: 100px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -200,77 +200,112 @@ body {
   background-color: #03396A;
 }
 .sidebar .sidebar__menu__logo .ac-logo {
-  width: 3rem;
+  width: 100px;
   cursor: pointer;
 }
 .sidebar .sidebar__menu__link {
   position: absolute;
   top: 15%;
-  left: -21%;
+  left: 15%;
   cursor: pointer;
 }
 .sidebar .sidebar__menu__link::after {
   content: "";
   border-style: solid;
-  border-width: 13px 13px 13px 13px;
+  border-width: 20px 20px 20px 20px;
   border-color: #fff;
   position: absolute;
   top: 22%;
-  right: 1.3rem;
+  right: 20%;
   transform: translateY(-50%);
   z-index: -1;
 }
 .sidebar .sidebar__menu__link .frame,
 .sidebar .sidebar__menu__link .folder,
 .sidebar .sidebar__menu__link .mail {
-  margin: 1.6rem;
+  width: 30px;
+  height: 30px;
+  margin: 50px 18px 50px 16px;
 }
 
-main {
-  margin-left: 60px;
+.main {
+  flex: 1;
+  margin-left: 150px;
 }
-main .content__container {
-  height: 100%;
+.main .main__title {
+  margin-bottom: 34px;
+  margin-top: 20px;
+  font-size: 48px;
 }
-main .content__container__title {
-  margin: 1rem 1rem 2rem 1rem;
+.main .main__wrapper {
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll;
 }
-main .content__container__main__header {
-  margin-left: 1rem;
-  background-color: #CDCDCD;
-  width: 80%;
-  height: 2rem;
+.main .main__table {
+  position: relative;
+  background: #fff;
 }
-main .content__container__main__header .id,
-main .content__container__main__header .name,
-main .content__container__main__header .description,
-main .content__container__main__header .price,
-main .content__container__main__header .start-time,
-main .content__container__main__header .end-time,
-main .content__container__main__header .actions {
+.main .table__header {
+  background: #CDCDCD;
+  color: black;
+}
+.main .table__row {
+  height: 3rem;
+  border-bottom: 1px solid #CDCDCD;
+}
+.main .table__row:nth-child(even) {
+  background: #CDCDCD;
+}
+.main .table__row:hover {
+  background: #CDCDCD;
+  transition: background 0.1s ease-out;
+}
+.main .table__cell {
+  text-align: center;
   padding: 0.5rem;
 }
-main .content__container__main__header .content__container__main__header__ad-g {
-  padding: 0.2rem;
-  width: 5.25rem;
+.main .table__thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-main .content__container__main__header .checkbox {
-  width: 1.875rem;
+.main .table__cell--checkbox {
+  width: 50px;
 }
-main .content__container__main__header .id {
-  width: 3rem;
+.main .table__cell--id {
+  width: 80px;
 }
-main .content__container__main__header .name,
-main .content__container__main__header .start-time,
-main .content__container__main__header .end-time {
-  width: 5.25rem;
+.main .table__cell--name,
+.main .table__cell--starttime,
+.main .table__cell--price,
+.main .table__cell--endtime {
+  width: 140px;
+  position: relative;
 }
-main .content__container__main__header .description {
-  width: 7.5rem;
+.main .table__cell--advertiser {
+  width: 140px;
 }
-main .content__container__main__header .actions {
-  width: 7.875em;
-  text-align: end;
+.main .table__cell--description {
+  width: 200px;
+}
+.main .table__cell--actions {
+  width: 210px;
+  position: relative;
+}
+.main .header__cell__icon--right {
+  position: absolute;
+  transform: translateY(-110%);
+  left: 80%;
+  cursor: pointer;
+}
+.main .cell__action__icon {
+  position: absolute;
+  right: 24px;
+  transform: translateY(-40%);
+}
+.main .hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=output.css.map */

@@ -6,7 +6,7 @@ $secondary-blue: #3c88fd;
 $freedom-blue: #02b8ff;
 $dark-gray: #CDCDCD;
 $light-gray: #E9E9E9;
-
+$orange: orange;
 $sizes: (
   25: 25%,
   50: 50%,
@@ -228,7 +228,7 @@ body {
 }
 
 .sidebar {
-  width: 3rem;
+  width: 100px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -238,7 +238,7 @@ body {
   .sidebar__menu__logo {
 
     .ac-logo {
-      width: 3rem;
+      width: 100px;
       cursor: pointer;
     }
 
@@ -247,17 +247,17 @@ body {
   .sidebar__menu__link {
     position: absolute;
     top: 15%;
-    left: -21%;
+    left: 15%;
     cursor: pointer;
 
     &::after {
       content: "";
       border-style: solid;
-      border-width: 13px 13px 13px 13px;
+      border-width: 20px 20px 20px 20px;
       border-color: $white ;
       position: absolute;
       top: 22%;
-      right: 1.3rem;
+      right: 20%;
       transform: translateY(-50%); // 以自己 y-軸的高度，移動 -50%
       z-index: -1;
     }
@@ -266,68 +266,113 @@ body {
     .frame,
     .folder,
     .mail {
-      margin: 1.6rem;
+      width: 30px;
+      height: 30px;
+      margin: 50px 18px 50px 16px;
     }
   }
 
 }
 
-main {
-  margin-left: 60px;
+.main {
+  flex: 1;
+  margin-left: 150px;
 
-
-  .content__container {
-    height: 100%;
+  .main__title {
+    margin-bottom: 34px;
+    margin-top: 20px;
+    font-size: 48px;
   }
 
-  .content__container__title {
-    margin: 1rem 1rem 2rem 1rem;
+  .main__wrapper {
+    width: 100%;
+    height: 80%;
+    overflow-y: scroll;
   }
 
-  .content__container__main__header {
-    margin-left: 1rem;
-    background-color: $dark-gray;
-    width: 80%;
-    height: 2rem;
+  .main__table {
+    position: relative;
+    background: $white;
+  }
 
-    .id,
-    .name,
-    .description,
-    .price,
-    .start-time,
-    .end-time,
-    .actions {
-      padding: 0.5rem;
-    }
+  .table__header {
+    background: $dark-gray;
+    color: black;
+  }
 
-    .content__container__main__header__ad-g {
-      padding: 0.2rem;
-      width: 5.25rem;
-    }
+  .table__row {
+    height: 3rem;
+    border-bottom: 1px solid $dark-gray;
+  }
 
-    .checkbox {
-      width: 1.875rem;
-    }
+  .table__row:nth-child(even) {
+    background: $dark-gray;
+  }
 
-    .id {
-      width: 3rem;
-    }
+  .table__row:hover {
+    background: $dark-gray;
+    transition: background 0.1s ease-out;
+  }
 
-    .name,
-    .start-time,
-    .end-time {
-      width: 5.25rem;
-    }
 
-    .description {
-      width: 7.5rem;
-    }
+  .table__cell {
+    text-align: center;
+    padding: 0.5rem;
+  }
 
-    .actions {
-      width: 7.875em;
-      text-align: end;
-    }
+  .table__thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 
+  .table__cell--checkbox {
+    width: 50px;
+
+  }
+
+  .table__cell--id {
+    width: 80px;
+  }
+
+  .table__cell--name,
+  .table__cell--starttime,
+  .table__cell--price,
+  .table__cell--endtime {
+    width: 140px;
+    position: relative;
+  }
+
+  .table__cell--advertiser {
+    // padding: 0.2rem;
+    width: 140px;
+  }
+
+  .table__cell--description {
+    width: 200px;
+  }
+
+  .table__cell--actions {
+    width: 210px;
+    position: relative;
+
+  }
+
+  .header__cell__icon--right {
+    position: absolute;
+    transform: translateY(-110%);
+    left: 80%;
+    cursor: pointer;
+  }
+
+  .cell__action__icon {
+    position: absolute;
+    right: 24px;
+    transform: translateY(-40%);
+  }
+
+  .hidden {
+    display: none;
   }
 
 }
