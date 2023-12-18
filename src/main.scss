@@ -7,6 +7,7 @@ $freedom-blue: #02b8ff;
 $dark-gray: #CDCDCD;
 $light-gray: #E9E9E9;
 $orange: orange;
+$table-gray: #828282;
 $sizes: (
   25: 25%,
   50: 50%,
@@ -119,7 +120,8 @@ body {
   height: 100%;
   background: $body-bg;
   color: $body-color;
-  font-family: "PingFang TC";
+  font-family: 'Roboto', sans-serif;
+  ;
 }
 
 .d-none {
@@ -295,6 +297,7 @@ body {
     background: $white;
   }
 
+
   .table__header {
     background: $dark-gray;
     color: black;
@@ -312,6 +315,10 @@ body {
   .table__row:hover {
     background: $dark-gray;
     transition: background 0.1s ease-out;
+  }
+
+  .table__row.checked {
+    background: $orange;
   }
 
 
@@ -348,6 +355,15 @@ body {
     width: 140px;
   }
 
+  .cell__advertiser__line {
+    display: block;
+    // 分成兩行
+  }
+
+  .cell__advertiser__line--group {
+    color: $table-gray
+  }
+
   .table__cell--description {
     width: 200px;
   }
@@ -374,6 +390,31 @@ body {
 
   .hidden {
     display: none;
+  }
+
+  .action__menu {
+    position: absolute;
+    z-index: 1;
+    width: 140px;
+    height: 120px;
+    background: $white;
+    border: 1px solid $dark-gray;
+    right: 40px;
+
+    .menu__body {
+      padding-left: 18%;
+
+      .menu__item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        height: 30px;
+
+        .menu__item__icon {
+          margin-right: 10px;
+        }
+      }
+    }
   }
 
 }

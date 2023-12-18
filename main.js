@@ -13,8 +13,7 @@ const campaign = [
   { ID: "11", Name: "Chistmas 2020", advertiser: "Foodmarket", group: "Krab", description: "Holiday night during christmas", price: "$2000", startTime: "2020/12/24 19:30", endTime: "2021/01/02 23:00" },
   { ID: "12", Name: "Chistmas 2020", advertiser: "Foodmarket", group: "Krab", description: "Holiday night during christmas", price: "$2000", startTime: "2020/12/24 19:30", endTime: "2021/01/02 23:00" }
 ]
-const input = document.getElementById("action__input");
-const inputs = document.querySelectorAll('.cell__action__icon');
+
 const dataPanel = document.querySelector('.data-panel');
 
 
@@ -67,8 +66,8 @@ function renderDataList(data) {
         <td class="table__cell table__cell--starttime">${item.startTime}</td>
         <td class="table__cell table__cell--endtime">${item.endTime}</td>
          <td class="table__cell table__cell--action">
-            <img class="cell__action__icon" src="https://raw.githubusercontent.com/WendellLiu/alphacamp-frontend-course/master/data-table/static/icons/menu.svg"  id="action__input_${item.ID}" alt="menu">
-            <div class="action__menu hidden" role="dialog" aria-modal="true" aria-labelledby="action__input_${item.ID}" id="action__menu_${item.ID}">
+            <img class="cell__action__icon" src="https://raw.githubusercontent.com/WendellLiu/alphacamp-frontend-course/master/data-table/static/icons/menu.svg" id="action__input_${item.ID}" alt="menu">
+            <div class="action__menu hidden" role="dialog" aria-modal="true" aria-labelledby="action__input_1" id="action__menu_${item.ID}">
             <menu class="menu__body">
               <menuitem class="menu__item">
                 <img src="https://raw.githubusercontent.com/WendellLiu/alphacamp-frontend-course/master/data-table/static/icons/duplicate.svg" class="menu__item__icon"/>
@@ -95,20 +94,35 @@ function renderDataList(data) {
 const toggleMenu = (event) => {
   // target the menu element associated with the clicked button
   const buttonId = event.target.id;
-  const menuId = buttonId.replace("action__input", "action__menu");
+  const menuId = buttonId.replace("action__input_", "action__menu_");
   const menu = document.getElementById(menuId);
-
-  console.log("Clicked Element:", event.target);  // Add this line
 
   if (menu) {
     menu.classList.toggle("hidden");
   }
-  console.log("Button ID:", buttonId);
-  console.log("Menu ID:", menuId);
+
+};
+
+// click handler
+const toggleRow = (event) => {
+  if (event.target.tagName === 'INPUT') {
+    const parentElement = event.target.parentElement;
+    const grandparentElement = parentElement.parentElement;
+    if (grandparentElement.classList.contains('table__header')) {
+      // 获取所有的 table__row 元素
+      const rows = document.querySelectorAll('.table__row');
+      // 遍历所有的 table__row 元素，将它们都设为 checked
+      rows.forEach(row => {
+        row.classList.toggle('checked', event.target.checked);
+      });
+    } else {
+      grandparentElement.classList.toggle('checked');
+    }
+  }
 };
 
 
+
 renderDataList(campaign)
-inputs.forEach((input) => {
-  input.addEventListener("click", toggleMenu);
-});
+dataPanel.addEventListener("click", toggleRow);
+dataPanel.addEventListener("click", toggleMenu);

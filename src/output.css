@@ -89,7 +89,7 @@ body {
   height: 100%;
   background: #f8f7fc;
   color: #18253d;
-  font-family: "PingFang TC";
+  font-family: "Roboto", sans-serif;
 }
 
 .d-none {
@@ -261,6 +261,9 @@ body {
   background: #CDCDCD;
   transition: background 0.1s ease-out;
 }
+.main .table__row.checked {
+  background: orange;
+}
 .main .table__cell {
   text-align: center;
   padding: 0.5rem;
@@ -286,6 +289,12 @@ body {
 .main .table__cell--advertiser {
   width: 140px;
 }
+.main .cell__advertiser__line {
+  display: block;
+}
+.main .cell__advertiser__line--group {
+  color: #828282;
+}
 .main .table__cell--description {
   width: 200px;
 }
@@ -307,6 +316,27 @@ body {
 }
 .main .hidden {
   display: none;
+}
+.main .action__menu {
+  position: absolute;
+  z-index: 1;
+  width: 140px;
+  height: 120px;
+  background: #fff;
+  border: 1px solid #CDCDCD;
+  right: 40px;
+}
+.main .action__menu .menu__body {
+  padding-left: 18%;
+}
+.main .action__menu .menu__body .menu__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 30px;
+}
+.main .action__menu .menu__body .menu__item .menu__item__icon {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=output.css.map */
