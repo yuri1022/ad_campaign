@@ -264,6 +264,9 @@ body {
 .main .table__row.checked {
   background: orange;
 }
+.main .table__header.table__row.checked {
+  background-color: #CDCDCD;
+}
 .main .table__cell {
   text-align: center;
   padding: 0.5rem;

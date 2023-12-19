@@ -321,6 +321,10 @@ body {
     background: $orange;
   }
 
+  .table__header.table__row.checked {
+    background-color: $dark-gray;
+  }
+
 
   .table__cell {
     text-align: center;

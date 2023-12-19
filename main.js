@@ -114,6 +114,13 @@ const toggleRow = (event) => {
       // 遍历所有的 table__row 元素，将它们都设为 checked
       rows.forEach(row => {
         row.classList.toggle('checked', event.target.checked);
+
+        // 找到当前行下的 input 元素，并设置其 checked 属性
+        const input = row.querySelector('input');
+        if (input) {
+          input.checked = event.target.checked;
+        }
+
       });
     } else {
       grandparentElement.classList.toggle('checked');
